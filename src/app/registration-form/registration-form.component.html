@@ -1,0 +1,118 @@
+l̥
+<mat-card>
+  <div class="maindiv">
+    <form (ngSubmit)="onSubmit()">
+      <h2>Patient Registration</h2>
+
+      <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          formControlName="firstName"
+          name="firstName"
+          required
+          minlength="4"
+          [(ngModel)]="user.firstName"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          [(ngModel)]="user.lastName"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Address1</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address1"
+          name="address1"
+          [(ngModel)]="user.address1"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Address2</label>
+        <input
+          type="text"
+          class="form-control"
+          id="address2"
+          name="address2"
+          aria-describedby="emailHelp"
+          [(ngModel)]="user.address2"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <select style="width: 420px; height: 40px">
+          <option *ngFor="let gender of dropdownData" [value]="gender">
+            {{gender}}
+          </option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">State</label>
+        <select style="width: 420px; height: 40px">
+          <option *ngFor="let state of dropdownStateData" [value]="state">
+            {{state}}
+          </option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label">City</label>
+        <input
+          type="city"
+          class="form-control"
+          id="city"
+          name="city"
+          [(ngModel)]="user.city"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">ZipCode</label>
+        <input
+          type="text"
+          class="form-control"
+          id="zipcode"
+          name="zipcode"
+          [(ngModel)]="user.zipcode"
+        />
+      </div>
+
+
+      <div class="mb-3">
+         <label class="form-label">Date of Birth</label>
+        <input
+          type="date"
+          class="form-control"
+          id="birthdate"
+          name="birthdate"
+          [(ngModel)]="user.birthdate"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</mat-card>
